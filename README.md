@@ -14,7 +14,28 @@ Installing
 
 Do Not Like is available to install [from the Chrome Webstore](https://chrome.google.com/webstore/detail/do-not-like/gphlpdohbkajeckfepokpmjedkjaefhf).
 
-Other installation methods are available for Firefox, but I don't know what they are.
+Manual installation in Chrome:
+
+1. Enable Developer Mode in `chrome://extensions`
+2. "Load unpacked"
+3. Select the `chrome_extension` folder within this project
+
+Manual installation in Firefox:
+
+1. Enable add-on debugging in `about:debugging#addons`
+2. "Load Temporary Add-on"
+3. Select either the zip file or the manifest file
+
+Development
+-----------
+
+To build the extension:
+
+```bash
+make clean && make
+```
+
+This will output do_not_like.zip
 
 Dear Twitter
 ------------
