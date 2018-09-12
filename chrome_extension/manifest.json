@@ -1,6 +1,6 @@
 {
   "name": "Do Not Like",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Automatically clicks 'I Do Not Like This Ad' on Twitter adverts, to help the machine understand that I Do Not Like adverts.",
   "homepage_url": "http://github.com/jonty/do_not_like",
@@ -13,6 +13,5 @@
         "src/inject.js"
       ]
     }
-  ],
-  "web_accessible_resources": ["src/do_not_like.js"]
+  ]
 }
