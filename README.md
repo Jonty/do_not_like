@@ -9,6 +9,13 @@ By doing this it trains Twitters Giant Bird Brain that you do not like the adver
 
 Hurrah.
 
+Installing
+----------
+
+Do Not Like is available to install [from the Chrome Webstore](https://chrome.google.com/webstore/detail/do-not-like/gphlpdohbkajeckfepokpmjedkjaefhf).
+
+Other installation methods are available for Firefox, but I don't know what they are.
+
 Dear Twitter
 ------------
 
