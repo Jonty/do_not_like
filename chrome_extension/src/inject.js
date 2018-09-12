@@ -1,16 +1,23 @@
-chrome.extension.sendMessage({}, function(response) {
-        var readyStateCheckInterval = setInterval(function() {
-                if (document.readyState === "complete") {
-                        clearInterval(readyStateCheckInterval);
+console.info("Injected script");
 
-                        ['do_not_like.js'].map(function(script) {
-                                var s = document.createElement('script');
-                                s.src = chrome.extension.getURL('src/' + script);
-                                s.onload = function() {
-                                        this.parentNode.removeChild(this);
-                                };
-                                (document.head||document.documentElement).appendChild(s);
-                        });
+if (document.readyState === 'loading') {
+        document.addEventListener('readystatechange', () => {
+                if (document.readyState === 'interactive') {
+                        initExtension();
                 }
-        }, 10);
-});
+        });
+} else {
+        initExtension();
+}
+
+function initExtension() {
+        function do_not_like() {
+                var xpath = '//button[contains(@class, "js-action-dismiss")]';
+                var ads = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+                for (var i = 0; i < ads.snapshotLength; i++) {
+                        ads.snapshotItem(i).click();
+                }
+        }
+
+        setInterval(do_not_like, 5000);
+}
